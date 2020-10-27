@@ -1,0 +1,157 @@
+@import './colorswatch';
+// top bar styles
+.fl-page-bar {
+    border-bottom: none;
+    text-align: right;
+    padding-top: 1rem;
+    padding-right: 4rem;
+    margin-bottom: -1rem;
+    position: relative;
+    z-index: 100;
+
+    .fl-page-bar-container {
+        .col-md-12.text-center {
+            text-align: right;
+            margin-bottom: -120px;
+        }
+    }
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}
+
+// top bar social menu li's
+.fl-page-bar li {
+    position: relative;
+    font-size: 20px;
+    padding: 0.3rem;
+
+    &.fab {
+        font-weight: 100;
+        &:hover {
+            &:before {
+                opacity: 0.8;
+            }
+        }
+        &:before {
+            color: var(--green);
+            transition: all 0.2s ease-in-out;
+        }
+
+        a {
+            color: transparent;
+            font-size: 0;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            height: 30px;
+            overflow: hidden;
+            top: 0;
+        }
+    }
+}
+
+
+header {
+    &.fl-page-nav-centered-inline-logo {
+        .fl-page-header-logo {
+            max-width: 500px;
+            text-align: center;      
+        
+            // logo image element
+            img {
+                max-width: 410px;
+                width: 85%;
+                
+            }
+    
+            @media (min-width: $small-desktop) {
+                margin-top: -2rem;
+                img {
+                    margin-top: -4rem;
+                }
+            }
+            
+        
+            @media (max-width: $tablet) {
+                max-width: 300px;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    .fl-page-header-container {
+        @media (max-width: $tablet) {
+            padding-top: 1rem;
+        }
+    }
+
+    // navigation styling
+    nav.navbar-default {
+        li.nav-item {
+            &.current-menu-item a.nav-link {
+                font-weight: bold;
+            }
+            a.nav-link {
+                text-transform: capitalize;
+                font-weight: 100;
+                transition: all 0.15s ease-in-out;
+                letter-spacing: -0.2px;
+                @media (min-width: $tablet) {
+                    margin-top: 3rem;
+                }
+                
+            }
+        }
+    }    
+}
+
+// mobile hamburger styling
+.fl-page-nav button.navbar-toggle  {
+    position: absolute;
+    right: 2rem;
+    top: -4rem;
+    width: 4rem;
+    height: 1rem;
+    background: white !important;
+    transition: all 0.15s ease;
+
+    span {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: $brown;
+        left: 0;
+        top: calc(100% / (50% - 2px));
+        transform-origin: 50%;
+        transition: all 0.15s ease;
+
+        &:first-of-type {
+            top: 0;
+        }
+
+        &:last-of-type {
+            top: 100%;
+        }
+    }
+
+    // open state
+    &.navbar-open {
+        transform: scale(0.8);
+
+        span {
+            opacity: 0;
+            top: 50%;
+
+            &:first-of-type {
+                transform: rotate(45deg);
+                opacity: 1;
+            }
+
+            &:last-of-type {
+                transform: rotate(-45deg);
+                opacity: 1;
+            }
+        }
+    }
+}

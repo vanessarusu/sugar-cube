@@ -1,0 +1,33 @@
+h2 {
+    font-weight: 100;
+}
+
+p {
+    letter-spacing: -0.7px;
+}
+
+strong {
+    font-weight: bold; 
+}
+
+body:not(.fl-builder-edit) {  
+    .fl-button {
+        border: none !important;
+        transition: all 0.1s ease-in;
+    
+        &:hover, 
+        &:focus {
+            border: none !important;
+        }
+    }
+}
+
+.custom-button span.fl-button-text {
+    font-size: 30px;
+}
+
+footer {
+    p {
+        letter-spacing: 0;
+    }
+}
