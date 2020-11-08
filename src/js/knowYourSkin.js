@@ -2,6 +2,7 @@ const knowYourSkin = (function () {
     var growthCycleDiagram = document.querySelector("#growthCycleDiagram");
     var SVGPhases = growthCycleDiagram.querySelectorAll("svg .phase-bg");
     var growthCycleTabs = document.querySelectorAll("#growthCycleTabs .fl-tabs-labels .fl-tabs-label");
+    var mobileGrowthCycleTabs = document.querySelectorAll("#growthCycleTabs .fl-tabs-panel-label");
     var SVGActiveClass= "active";
     var tabsActiveClass = "fl-tab-active";
 
@@ -51,6 +52,20 @@ const knowYourSkin = (function () {
                 forceSVGClick(diagramIndex);  
             })
         });
+
+        mobileGrowthCycleTabs.forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                
+                var diagramIndex = e.target.getAttribute("data-index");
+                forceSVGClick(diagramIndex);
+                mobileGrowthCycleTabs.forEach(function(el) {
+                    if(!el.classList.contains('fl-tab-active')) {
+                        el.querySelector('i').classList.remove('fa-minus');
+                    }
+                })
+                e.target.querySelector('i').classList.add('fa-minus');
+            })
+        });
     }
 
     function styleTabs() {
@@ -63,6 +78,7 @@ const knowYourSkin = (function () {
                 el.innerHTML = newHeading;
             }
         })
+        mobileGrowthCycleTabs[0].querySelector('i').classList.add('fa-minus');
     }
 
     return {

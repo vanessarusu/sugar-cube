@@ -152,13 +152,17 @@
             }
         }
 
-        @media(min-width: $phone) {
-            .fl-tabs-panel-content {
-                &.fl-tab-active {
-                    background: $offwhite;
-                    background: var(--offwhite);
-                    padding: 2rem 3rem;
-                }
+        .fl-tabs-panel-content {
+            &.fl-tab-active {
+                background: $offwhite;
+                background: var(--offwhite);
+                padding: 2rem 3rem;
+            }
+        }
+
+        .fl-tabs-panel-label {
+            span {
+                pointer-events: none;
             }
         }
     }
